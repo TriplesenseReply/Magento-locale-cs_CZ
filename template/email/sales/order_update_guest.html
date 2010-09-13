@@ -1,0 +1,45 @@
+<!--@subject {{var store.getFrontendName()}}: Order # {{var order.increment_id}} update @-->
+<!--@vars
+{"store url=\"\"":"Store Url",
+"skin url=\"images/logo_email.gif\" _area='frontend'":"Email Logo Image",
+"htmlescape var=$billing.getName()":"Guest Customer Name",
+"var order.increment_id":"Order Id",
+"var order.getStatusLabel()":"Order Status",
+"var comment":"Order Comment",
+"var store.getFrontendName()":"Store Name"}
+@-->
+<!--@styles
+body,td { color:#2f2f2f; font:11px/1.35em Verdana, Arial, Helvetica, sans-serif; }
+@-->
+
+<div style="font:11px/1.35em Verdana, Arial, Helvetica, sans-serif;">
+<table cellspacing="0" cellpadding="0" border="0" width="98%" style="margin-top:10px; font:11px/1.35em Verdana, Arial, Helvetica, sans-serif; margin-bottom:10px;">
+<tr>
+    <td align="center" valign="top">
+        <!-- [ header starts here] -->
+        <table cellspacing="0" cellpadding="0" border="0" width="650">
+        <tr>
+            <td valign="top"><a href="{{store url=""}}"><img src="{{skin url="images/logo_email.gif" _area='frontend' _package='swpackage' _theme='blank'}}" alt="{{var store.getFrontendName()}}"  style="margin-bottom:10px;" border="0"/></a></td>
+        </tr>
+        </table>
+
+        <!-- [ middle starts here] -->
+        <table cellspacing="0" cellpadding="0" border="0" width="650">
+        <tr>
+            <td valign="top">
+                <p>
+                    <strong>Vážený zákazníku</strong>,<br/>
+                    u Vaší objednávky číslo: {{var order.increment_id}} se změnil stav na: <br/>
+                    <strong>{{var order.getStatusLabel()}}</strong>.
+                </p>
+                <p>{{var comment}}</p>
+                <p>Pokud budete mít jakékoliv dotazy neváhejte nás kontaktovat na e-mail <a href="mailto:%7B%7Bconfig%20path=%27trans_email/ident_support/email%27%7D%7D" style="color: rgb(30, 126, 200);">{{config path='trans_email/ident_support/email'}}</a>, nebo volejte na číslo: {{config path='general/store_information/phone'}} {{customVar code=cz_store_hours}}.
+                </p>
+              <p>S pozdravem,<br/><strong>{{var store.getFrontendName()}}</strong></p>
+            </td>
+        </tr>
+        </table>
+    </td>
+</tr>
+</table>
+</div>

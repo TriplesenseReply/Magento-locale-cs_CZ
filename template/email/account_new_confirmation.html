@@ -1,0 +1,45 @@
+<!--@subject Account confirmation for {{var customer.name}} @--><!--@vars
+{"store url=\"\"":"Store Url",
+"skin url=\"images/logo_email.gif\" _area='frontend'":"Email Logo Image",
+"store url=\"customer/account/\"":"Customer Account Url",
+"htmlescape var=$customer.name":"Customer Name",
+"var customer.email":"Customer Email",
+"store url=\"customer/account/confirm/\" _query_id=$customer.id _query_key=$customer.confirmation _query_back_url=$back_url":"Confirmation Url",
+"htmlescape var=$customer.password":"Customer password"}
+@--><!--@styles
+body,td { color:#2f2f2f; font:11px/1.35em Verdana, Arial, Helvetica, sans-serif; }
+@-->
+<div style="font-family: Verdana,Arial,Helvetica,sans-serif; font-style: normal; font-variant: normal; font-weight: normal; font-size: 11px; line-height: 1.35em; font-size-adjust: none; font-stretch: normal;">
+    <table style="margin-top: 10px; font-family: Verdana,Arial,Helvetica,sans-serif; font-style: normal; font-variant: normal; font-weight: normal; font-size: 11px; line-height: 1.35em; font-size-adjust: none; font-stretch: normal; margin-bottom: 10px;" border="0" cellpadding="0" cellspacing="0" width="98%">
+        <tbody><tr>
+            <td align="center" valign="top">
+                <!-- [ header starts here] -->
+                <table border="0" cellpadding="0" cellspacing="0" width="650">
+                    <tbody><tr>
+                        <td valign="top">
+                            <a href="%7B%7Bstore%20url=" }}=""><img src="%7B%7Bskin%20url=" images="" logo_email.gif="" _area="frontend" _package="swpackage" _theme="blank" }}="" alt="{{var store.getFrontendName()}}" style="margin-bottom: 10px;" border="0"></a>
+						</td>
+                    </tr>
+                </tbody></table>
+
+                <!-- [ middle starts here] -->
+                <table border="0" cellpadding="0" cellspacing="0" width="650">
+                    <tbody><tr>
+                        <td valign="top">
+                            <p><strong>Vážený(á) {{var customer.name}}</strong>, <br>vítejte na e-shopu {{var store.getFrontendName()}}.</p>
+
+                            <p>Pro vstup do vašeho účtu musí být Váš e-mail {{var customer.email}} potvrzen.</p>
+
+                            <p>Pro potvrzení, prosím přejděte na adresu: <a href="%7B%7Bstore%20url=" customer="" account="" confirm="" _query_id="$customer.id" _query_key="$customer.confirmation" _query_back_url="$back_url}}&quot;" style="color: rgb(30, 126, 200);">tuto adresu</a>. Přechod na danou adresu je platný pouze jednou.</p>
+
+                            <p>Jestliže máte nějáké dotazy, pište prosím na e-mail: <a href="mailto:%7B%7Bconfig%20path=%27trans_email/ident_support/email%27%7D%7D" style="color: rgb(30, 126, 200);">{{config path='trans_email/ident_support/email'}}</a>, nebo volejte na číslo: {{config path='general/store_information/phone'}} {{customVar code=cz_store_hours}}</p>
+                            <br/><br/>
+                            <p>S pozdravem {{var customer.name}}</p>
+                        </td>
+                    </tr>
+                </tbody></table>
+
+            </td>
+        </tr>
+    </tbody></table>
+</div>

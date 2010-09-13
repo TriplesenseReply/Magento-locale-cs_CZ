@@ -1,0 +1,54 @@
+<!--@subject Welcome, {{var customer.name}}! @--><!--@vars
+{"store url=\"\"":"Store Url",
+"skin url=\"images/logo_email.gif\" _area='frontend'":"Email Logo Image",
+"htmlescape var=$customer.name":"Customer Name",
+"store url=\"customer/account/\"":"Customer Account Url",
+"var customer.email":"Customer Email",
+"htmlescape var=$customer.password":"Customer Password"}
+@--><!--@styles
+body,td { color:#2f2f2f; font:11px/1.35em Verdana, Arial, Helvetica, sans-serif; }
+@-->
+<div style="font-family: Verdana,Arial,Helvetica,sans-serif; font-style: normal; font-variant: normal; font-weight: normal; font-size: 11px; line-height: 1.35em; font-size-adjust: none; font-stretch: normal;">
+    <table style="margin-top: 10px; font-family: Verdana,Arial,Helvetica,sans-serif; font-style: normal; font-variant: normal; font-weight: normal; font-size: 11px; line-height: 1.35em; font-size-adjust: none; font-stretch: normal; margin-bottom: 10px;" border="0" cellpadding="0" cellspacing="0" width="98%">
+        <tbody><tr>
+            <td align="center" valign="top">
+                <!-- [ header starts here] -->
+                <table border="0" cellpadding="0" cellspacing="0" width="650">
+                    <tbody><tr>
+                        <td valign="top">
+                            <a href="%7B%7Bstore%20url=" }}=""><img src="%7B%7Bskin%20url=" images="" logo_email.gif="" _area="frontend" _package="swpackage" _theme="blank" }}="" alt="{{var store.getFrontendName()}}" style="margin-bottom: 10px;" border="0"></a>
+						</td>
+                    </tr>
+                </tbody></table>
+
+                <!-- [ middle starts here] -->
+                <table border="0" cellpadding="0" cellspacing="0" width="650">
+                    <tbody><tr>
+                        <td valign="top">
+                        <p><strong>Vážený(á) {{var customer.name}}</strong>, <br/>
+                        vítejte na e-shopu {{var store.getFrontendName()}}. Pro vstup do svého účtu se můžete <a href="%7B%7Bstore%20url=" customer="" account="" }}="" style="color: rgb(30, 126, 200);">Přihlásit</a>, nebo přejít na <a href="%7B%7Bstore%20url=" customer="" account="" }}="" style="color: rgb(30, 126, 200);">Váš účet</a>.</p>
+                            <p style="border: 1px solid rgb(190, 188, 183); padding: 13px 18px; background: rgb(248, 247, 245) none repeat scroll 0%; -moz-background-clip: -moz-initial; -moz-background-origin: -moz-initial; -moz-background-inline-policy: -moz-initial;">
+                                Pro vstup do svého účtu používejte následující údaje:<br/>
+                                E-mail: {{var customer.email}}<br/>
+                                Heslo: {{var customer.password}}</p><p>
+                            </p><p>Po přihlášení do Vašeho účtu budete mít následující možnosti a výhody:</p>
+                            <ul>
+                                <li>Rychlá objednávka zboží</li>
+                                <li>Kontrola objednávek</li>
+                                <li>Prohledávání historie nákupů</li>
+                                <li>Změna údajů účtu</li>
+                                <li>Změna vstupního hesla</li>
+                                <li>Správa adresářů pro fakturaci a dodávky zboží</li>
+                            </ul>
+                            <p>Jestliže mate nějáké dotazy napište nám na e-mail <a href="mailto:%7B%7Bconfig%20path=%27trans_email/ident_support/email%27%7D%7D" style="color: rgb(30, 126, 200);">{{config path='trans_email/ident_support/email'}}</a>, nebo volejte na číslo: {{config path='general/store_information/phone'}} {{customVar code=cz_store_hours}}.</p>
+                            <br/><br/>
+                            <p>Děkujeme Vám za registraci!</p>
+                            <p>S pozdravem,<br/><strong>{{htmlescape var=$customer.name}}</strong></p>
+                        </td>
+                    </tr>
+                </tbody></table>
+
+            </td>
+        </tr>
+    </tbody></table>
+</div>
