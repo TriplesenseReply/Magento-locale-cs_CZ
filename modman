@@ -1,0 +1,3 @@
+template/*              app/locale/cs_CZ/template
+Mage_*                  app/locale/cs_CZ
+Phoenix_*               app/locale/cs_CZ
