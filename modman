@@ -1,4 +1,4 @@
-template/*                      app/locale/cs_CZ/template
+template/email/*                app/locale/cs_CZ/template/email/
 
 Mage_AdminNotification.csv      app/locale/cs_CZ/
 Mage_Adminhtml.csv              app/locale/cs_CZ/
